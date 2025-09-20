@@ -1,8 +1,0 @@
-npm run build
-git init
-git add .
-git commit -m "Initial commit"
-git branch -M main
-git remote add origin https://github.com/<ryanreed8462-hub>/siantartop-website.git
-git push -u origin main
-npm install --save-dev gh-pages

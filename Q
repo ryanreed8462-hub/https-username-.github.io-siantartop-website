@@ -1,0 +1,41 @@
+              </CardFooter>
+            </form>
+          </Card>
+        )}
+        {projects.length === 0 ? (
+          <Card className="text-center p-8 border-border">
+            <CardContent>
+              <p className="text-muted-foreground">Belum ada projek. Tambahkan projek pertama Anda!</p>
+            </CardContent>
+          </Card>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {projects.map((project) => (
+              <Card key={project.id} className="border-border">
+                <CardHeader>
+                  <CardTitle className="text-foreground">{project.title}</CardTitle>
+                  <CardDescription className="text-muted-foreground">
+                    Dibuat: {new Date(project.createdAt).toLocaleDateString()}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-foreground">{project.description}</p>
+                </CardContent>
+                <CardFooter>
+                  <Button 
+                    variant="destructive" 
+                    onClick={() => handleDeleteProject(project.id)}
+                    className="bg-destructive text-destructive-foreground"
+                  >
+                    Hapus
+                  </Button>
+                </CardFooter>
+              </Card>
+            ))}
+          </div>
+        )}
+      </main>
+    </div>
+  );
+};
+export default LoginProjectApp;
